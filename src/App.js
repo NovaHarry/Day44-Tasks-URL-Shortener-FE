@@ -6,18 +6,19 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import URL from './components/URL';
 
-export const url = 'https://url-shortener-api-kkuy.onrender.com';
+ export const url = 'https://url-shortener-api-kkuy.onrender.com';
 
 function App() {
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path ='/login' element = {<Login/>}/>
+      <Route path ='/' element = {<Login/>}/>
       <Route path ='/users/adduser' element = {<Register/>}/>
       <Route path='/users/forgotpassword/:email' element = {<ForgotPassword/>}/>
       <Route path='/users/update-password/:randomString' element = {<NewPassword/>}/>
-      <Route path ='/url/url/url' element = {<URL/>}/>
+      <Route path ='/url/url' element = {<URL/>}/>
+      <Route path ='/url/:shortUrl' />
     </Routes>
     </BrowserRouter>
     </>

@@ -18,7 +18,7 @@ const Login = () => {
     try{
       let res = await axios.post(`${url}/users/login`, payload);
       toast.success(res.data.message);
-      navigate('/url/url/url');
+      navigate('/url/url');
     }
     catch (error){
       toast.error(error.response.data.message);

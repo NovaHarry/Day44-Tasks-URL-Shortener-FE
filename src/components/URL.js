@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/esm/Button';
 
 
 
+
+
 const URL = () => {
   let navigate = useNavigate();
 
@@ -36,7 +38,7 @@ const URL = () => {
   let handleShrink = async()=>{
     let payload = {fullUrl}
     try{
-      let res = await axios.post(`${url}/addUrl`, payload);
+      let res = await axios.post(`${url}/url/addurl`, payload);
       toast.success(res.data.message);
       window.location.reload();
     }
@@ -52,13 +54,15 @@ const URL = () => {
   let handleClick = async(short)=>{
     try{
       let res = await axios.get(`${url}/url/${short}`);
-      toast.success(res.data.message);
+      // toast.success(res.data.message); 
+      console.log(short)
     }
     catch (error){
-      toast.error(error.response.data.message);
+      // toast.error(error.response.data.message);
       console.log(error)
     }
   }
+  
 
   return (
        <div className='container my-5'>
@@ -85,7 +89,7 @@ const URL = () => {
               return <tr key={e.id}>
                 <td>{i+1}</td>
                 <td><a href = {e.fullUrl}>{e.fullUrl}</a></td>
-                <td><a href = {e.shortUrl} onClick={()=>handleClick(e.shortUrl)}>{e.shortUrl}</a></td>
+                <td><span onClick={()=>handleClick(e.shortUrl)}>{e.shortUrl}</span></td>
                 <td>{e.clicks}</td>
               </tr>
             })
