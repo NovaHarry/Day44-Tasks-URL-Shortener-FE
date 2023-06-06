@@ -20,6 +20,7 @@ function Register() {
     try{
       let res = await axios.post(`${url}/users/adduser`, payload);
       toast.success(res.data.message);
+      navigate(`/`);
     }
     catch (error){
       toast.error(error.response.data.message);
