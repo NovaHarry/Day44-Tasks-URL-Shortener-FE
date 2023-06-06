@@ -6,7 +6,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import URL from './components/URL';
 
-export const url = 'http://localhost:5000' //'https://url-shortener-api-kkuy.onrender.com';
+export const url = 'https://url-shortener-api-kkuy.onrender.com';
 
 function App() {
   return (
