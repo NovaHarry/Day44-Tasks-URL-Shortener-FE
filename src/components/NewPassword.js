@@ -23,7 +23,7 @@ function NewPassword() {
       console.log(randomString);
       toast.success(res.data.message);
       console.log(res);
-      navigate(`/login`);
+      navigate(`/`);
     }
     catch (error){
       toast.error(error.response.data.message);
