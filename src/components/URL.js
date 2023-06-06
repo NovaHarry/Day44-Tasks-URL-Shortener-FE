@@ -51,30 +51,29 @@ const URL = () => {
     getData();
   },[])
 
-  let handleClick = async(short)=>{
-    try{
-      let res = await axios.get(`${url}/url/${short}`);
-      // toast.success(res.data.message); 
-      console.log(short)
-    }
-    catch (error){
-      // toast.error(error.response.data.message);
-      console.log(error)
-    }
-  }
+  // let handleClick = async(short)=>{
+  //   try{
+  //     let res = await axios.get(`${url}/url/${short}`);
+  //     toast.success(res.data.message); 
+  //     console.log(short);
+  //   }
+  //   catch (error){
+  //     toast.error(error.response.data.message);
+  //     console.log(error)
+  //   }
+  // }
   
-
   return (
        <div className='container my-5'>
-       <div className="input-field">
-       <input className="input" placeholder='Enter your URL here (use https://)' onChange={(e)=>setfullUrl(e.target.value)}>
+       <div className="input">
+       <input className="input-field" placeholder='Enter your URL here (use https://)' onChange={(e)=>setfullUrl(e.target.value)}>
        </input>
        <Button variant="primary" onClick={()=>handleShrink()}>
         Shrink Now!
       </Button>
        </div>
        <div className='table my-3'>
-      <Table striped bordered hover>
+      <Table bordered hover>
         <thead>
           <tr>
           <th>#</th>
@@ -89,7 +88,7 @@ const URL = () => {
               return <tr key={e.id}>
                 <td>{i+1}</td>
                 <td><a href = {e.fullUrl}>{e.fullUrl}</a></td>
-                <td><span onClick={()=>handleClick(e.shortUrl)}>{e.shortUrl}</span></td>
+                <td><a href = {`${url}/url/${e.shortUrl}`} >{e.shortUrl}</a></td>
                 <td>{e.clicks}</td>
               </tr>
             })

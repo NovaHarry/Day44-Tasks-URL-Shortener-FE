@@ -55,15 +55,17 @@ const Login = () => {
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="primary" onClick={()=>handleLogin()}>
-        Submit
-      </Button>
+      <div className = "buttons">
       <Button variant="primary" onClick={()=>handleRegsiter()}>
-        Register
+        Regsiter
+      </Button>
+      <Button variant="primary" onClick={()=>handleLogin()}>
+        Login
       </Button>
       <Button variant="primary" onClick={()=>handleForgot()}>
-        Forgot Password
+        Forgot Password ?
       </Button>
+      </div>
     </Form>
     </div>
   );

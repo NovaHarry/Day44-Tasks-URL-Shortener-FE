@@ -6,3 +6,15 @@
 .title{
     text-align: center;
 }
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.input{
+    display: flex;
+    justify-content: space-around;
+}
+.input-field{
+    width:70%;
+}

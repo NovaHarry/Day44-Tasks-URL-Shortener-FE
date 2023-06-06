@@ -18,7 +18,6 @@ function App() {
       <Route path='/users/forgotpassword/:email' element = {<ForgotPassword/>}/>
       <Route path='/users/update-password/:randomString' element = {<NewPassword/>}/>
       <Route path ='/url/url' element = {<URL/>}/>
-      <Route path ='/url/:shortUrl' />
     </Routes>
     </BrowserRouter>
     </>
